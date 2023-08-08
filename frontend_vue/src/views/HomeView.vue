@@ -29,7 +29,7 @@
 
           <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View Details</router-link>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,12 +51,16 @@ export default {
   },
   mounted(){
     this.getLatestProducts()
+
+    document.title = 'Home' + ' | Jackets'
   },
   methods: {
-    getLatestProducts() {
-      axios.get('api/v1/latest-products/').then(response => {this.latestProducts = response.data}).catch(error => {
+    async getLatestProducts() {
+      this.$store.commit('setIsLoading', true)
+      await axios.get('api/v1/latest-products/').then(response => {this.latestProducts = response.data}).catch(error => {
         console.log(error)
       })
+      this.$store.commit('setIsLoading', false)
     }
   }
 }
