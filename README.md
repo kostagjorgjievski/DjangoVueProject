@@ -13,3 +13,4 @@ Vue.js
 Babel, Router, Vuex, CSS Pre-processors, 3.x, history mode, dart-sass, dedicated config files
 npm install axios
 npm install bulma (use tailwind at end)
+npm install buma-toast (for popups)
