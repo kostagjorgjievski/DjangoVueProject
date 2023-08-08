@@ -4,11 +4,30 @@
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>Jackets</strong></router-link>
 
-        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
+        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu"></a>
+          <div class="navbar-start">
+            <div class="navbar-item">
+              <form method="get" action="/search">
+                <div class="field has-addons">
+                  <div class="control">
+                    <input type="text" class="input" placeholder="Search" name="query">
+                  </div>
+
+                  <div class="control">
+                    <button class="button is-success">
+                      <span class="icon">
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+
       </div>
 
       <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active' : showMobileMenu}">
